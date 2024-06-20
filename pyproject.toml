@@ -5,6 +5,9 @@ requires = [
     'numpy>=1.19.0',
 ]
 
+[tool.poetry.dependencies]
+python = "^3.8"
+
 [tool.black]
 line-length = 79
 include = '\.pyi?$'
