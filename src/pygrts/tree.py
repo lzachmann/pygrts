@@ -196,6 +196,11 @@ class QuadTree(TreeMixin):
         frame = self.to_frame().total_bounds.flatten().tolist()
 
         return self.bounds_to_tuple(frame)
+    
+    def update_dataframe(self, new_dataframe: gpd.GeoDataFrame):
+        """Update the dataframe and its spatial index."""
+        self.dataframe = new_dataframe
+        self.sindex = self.dataframe.sindex
 
     def to_geom(self) -> T.List[Polygon]:
         """Converts quadrant bounds to geometry."""
